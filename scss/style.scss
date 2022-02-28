@@ -1,0 +1,69 @@
+//* ###### Главный Scss-файл ######
+
+//? ====== Переменные =============================
+@import "_base.scss";
+
+//? ====== Обнуление стилей =======================
+@import "_reset.scss";
+
+//? ====== Oбщие параметры ========================
+@import "_site.scss";
+
+//? ===== Оcновная сетка ==========================
+@import "_grid.scss";
+
+//? ====== Oбщие стили ============================
+@import "interface/header"; // Шапка сайта
+@import "interface/footer"; // Подвал сайта
+
+@import "interface/_button.scss"; // Общии стили кнопок
+@import "interface/_form.scss";   // Общии стили форм
+@import "interface/_popup.scss";  // Общии стили всплывашек
+
+//? ====== Блоки и страницы ======================
+
+.video {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  background: #000;
+}
+.video-block {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  //border: 1px solid #fff;
+  color: #fff;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  * {
+    width: 100%;
+    height: 100%;
+  }
+  .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  &:first-child, &:nth-child(3n) {
+    transform: translateX(15%);
+  }
+  &:nth-child(2n) {
+    transform: translateX(-15%);
+  }
+}
+@media (max-width: 780px) {
+  .video-block {
+    width: 100%;
+    height: auto;
+  }
+}

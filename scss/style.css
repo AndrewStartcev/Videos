@@ -1,0 +1,476 @@
+@charset "UTF-8";
+/* Обнуление стилей */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a {
+  color: inherit;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="text"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type="text"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+input[type="search"] {
+  border-width: 0px;
+  border: 0;
+  background: transparent;
+  outline: none;
+  border-radius: 0;
+}
+
+input[type="search"]:focus, input[type="search"]:hover, input[type="search"]:active {
+  outline: none;
+}
+
+input,
+button,
+textarea {
+  border-radius: 0;
+  font-family: inherit;
+  border-width: 0px;
+  border: none;
+  background: transparent;
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/* END Обнуление стилей */
+.page {
+  font-size: 16px;
+  line-height: 150%;
+  font-family: "Arial", sans-serif;
+  height: 100%;
+}
+
+.page__wrapper {
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.page__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.lock {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1210px) {
+  .container {
+    max-width: 768px;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.checkbox {
+  cursor: pointer;
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox__input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.checkbox__input:checked + .checkbox__item::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox__item {
+  margin-top: 0px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fefefe;
+  border-radius: 5px;
+  margin-right: 11px;
+  position: relative;
+}
+
+.checkbox__item::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #ff0000;
+  border-radius: 3px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.checkbox__text {
+  padding-top: 1px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 16px;
+  line-height: 13px;
+  font-weight: 400;
+  color: inherit;
+}
+
+.checkbox.orange {
+  margin-top: 20px;
+}
+
+.checkbox.orange .checkbox__item {
+  border-color: #f78202;
+}
+
+.checkbox.orange .checkbox__item::after {
+  background-color: #f78202;
+}
+
+.checkbox.orange .checkbox__text {
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 13px;
+  font-weight: 400;
+}
+
+.popup {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 100;
+  padding: 30px 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: visibility 0.5s ease 0s;
+  transition: visibility 0.5s ease 0s;
+  visibility: hidden;
+  z-index: 9999;
+}
+
+.popup::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.8s ease 0s;
+  transition: opacity 0.8s ease 0s;
+}
+
+.popup.show {
+  visibility: visible;
+}
+
+.popup.show::before {
+  opacity: 1;
+}
+
+.popup.show .popup__body {
+  -webkit-transition: all 0.3s ease 0.2s;
+  transition: all 0.3s ease 0.2s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.popup__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+}
+
+.popup__body {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.popup__close {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.popup__close::after, .popup__close::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 1px;
+  border-radius: 30px;
+  background: #f78202;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.popup__close::before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.popup__close::after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.popup__close:hover::after, .popup__close:hover::before, .popup__close:focus-visible::after, .popup__close:focus-visible::before {
+  background: #000000;
+}
+
+.video {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: #000;
+}
+
+.video-block {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  color: #fff;
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.video-block * {
+  width: 100%;
+  height: 100%;
+}
+
+.video-block .mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.video-block:first-child, .video-block:nth-child(3n) {
+  -webkit-transform: translateX(15%);
+          transform: translateX(15%);
+}
+
+.video-block:nth-child(2n) {
+  -webkit-transform: translateX(-15%);
+          transform: translateX(-15%);
+}
+
+@media (max-width: 780px) {
+  .video-block {
+    width: 100%;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */
