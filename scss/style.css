@@ -462,7 +462,7 @@ textarea {
           transform: translateX(15%);
 }
 
-.video-block:nth-child(3n)::after {
+.video-block:first-child::after, .video-block:nth-child(3n)::after {
   content: '';
   display: block;
   width: 15%;

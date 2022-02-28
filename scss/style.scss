@@ -56,10 +56,7 @@
   }
   &:first-child, &:nth-child(3n) {
     transform: translateX(15%);
-
-  }
-  &:nth-child(3n) {
-     &::after {
+    &::after {
       content: '';
       display: block;
       width: 15%;
@@ -70,6 +67,7 @@
       top: 0;
     }
   }
+
   &:nth-child(2n) {
     transform: translateX(-15%);
     &::after {
