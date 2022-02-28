@@ -462,9 +462,42 @@ textarea {
           transform: translateX(15%);
 }
 
+.video-block:first-child::after, .video-block:nth-child(3n)::after {
+  content: '';
+  display: block;
+  width: 15%;
+  height: 100%;
+  background: #000;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .video-block:nth-child(2n) {
   -webkit-transform: translateX(-15%);
           transform: translateX(-15%);
+}
+
+.video-block:nth-child(2n)::after {
+  content: '';
+  display: block;
+  width: 15%;
+  height: 100%;
+  background: #000;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.video-block:nth-child(2n)::before {
+  content: '';
+  display: block;
+  width: 15%;
+  height: 100%;
+  background: #000;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 @media (max-width: 780px) {
